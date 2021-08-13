@@ -1,0 +1,55 @@
+:host {
+    display: flex;
+    padding-top: 70px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+img {
+    height: 500px;
+    box-shadow: 0 10px 70px -27px;
+    display: block;
+}
+
+.titulo {
+    h1,
+    h2 {
+        text-align: right;
+        color: #1c1c1c;
+        font-size: 50px;
+        word-wrap: break-word;
+        margin: 5px 0;
+        width: 127px;
+        font-weight: 700;
+    }
+    h2 {
+        text-align: left;
+        font-size: 30px;
+        font-weight: 100;
+    }
+}
+
+.foto {
+    z-index: 9;
+    margin-right: -40px;
+}
+
+.sobre {
+    height: 600px;
+    margin-top: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px -27px;
+    width: 50%;
+
+    .conteudo {
+        margin-left: 60px;
+    }
+    
+    .descricao {
+        font-size: 16px;    
+    }
+}

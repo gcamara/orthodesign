@@ -1,18 +1,29 @@
 :host {
-    min-height: 50vh;
     display: flex;
     padding-top: 70px;
     box-sizing: border-box;
+    padding-bottom: 70px;
 }
 
 .titulo {
     width: 20%;
-    h1 {
+    div { 
+        width: 100%;
+        line-height: 35px;
+    }
+    h1, h2 {
         text-align: right;
         color: #1c1c1c;
-        max-width: 80%;
         font-size: 50px;
         word-wrap: break-word;
+        margin: 0;
+        width: 193px;
+        font-weight: 700;
+    }
+    h2 {
+        text-align: left;
+        font-size: 30px;
+        font-weight: 100;
     }
 }
 
@@ -47,5 +58,23 @@
     .descricao {
         color: #999;
         font-weight: 100;
+    }
+}
+
+hr.vertical {
+    width: 1px;
+    border: none;
+    border-right: 1px #cecece solid;
+}
+
+.saiba-mais {
+    height: 200px;
+    button {
+        max-width: 150px;
+        .mat-icon {
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+        }
     }
 }

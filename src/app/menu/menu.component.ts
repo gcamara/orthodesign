@@ -17,8 +17,9 @@ export class MenuComponent implements AfterViewInit {
 
   menus: MenuItem[] = [
     { title: 'Início', section: '#' },
-    { title: 'Serviços', section: '#servicos' },
     { title: 'Sobre', section: '#sobre' },
+    { title: 'Serviços', section: '#servicos' },
+    { title: 'Nossa Equipe', section: '#equipe' },
     { title: 'Localização', section: '#localizacao' },
   ];
 
