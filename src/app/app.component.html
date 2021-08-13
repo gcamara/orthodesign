@@ -1,0 +1,27 @@
+<header>
+  <app-menu></app-menu>
+  <swiper [slidesPerView]="1" [pagination]="{ clickable: true }" >
+  <!-- [autoplay]="{
+    delay: 4000,
+    disableOnInteraction: false
+  }"> -->
+    <ng-template swiperSlide>
+      <app-welcome></app-welcome>
+    </ng-template>
+    <ng-template swiperSlide>
+      Teste
+    </ng-template>
+    <ng-template swiperSlide>
+
+    </ng-template>
+  </swiper>
+</header>
+<main>
+  <section #servicos>
+    <app-servicos></app-servicos>
+  </section>
+  <section>
+  </section>
+  <section>
+  </section>
+</main>

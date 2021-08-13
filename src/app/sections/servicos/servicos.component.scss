@@ -1,0 +1,51 @@
+:host {
+    min-height: 50vh;
+    display: flex;
+    padding-top: 70px;
+    box-sizing: border-box;
+}
+
+.titulo {
+    width: 20%;
+    h1 {
+        text-align: right;
+        color: #1c1c1c;
+        max-width: 80%;
+        font-size: 50px;
+        word-wrap: break-word;
+    }
+}
+
+.servicos {
+    width: 80%;
+    margin-left: 40px;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+.item {
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px -27px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    img {
+        border-radius: 20px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 30px;
+        font-size: 20px;
+        color: #1c1c1c;
+    }
+    
+    .descricao {
+        color: #999;
+        font-weight: 100;
+    }
+}

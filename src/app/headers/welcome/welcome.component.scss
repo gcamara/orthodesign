@@ -1,0 +1,44 @@
+:host {
+    // background-color: #F8F8F8;
+    height: 100%;
+    background: url('../../../assets/smiling.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.container {
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.autoestima {
+    color: #333;
+}
+.btn-servicos {
+    cursor: pointer;
+    width: 200px;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    background-color: #447BF5;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 80px;
+    text-transform: uppercase;
+    color: #1c1c1c;
+
+    &.header-1 {
+        font-weight: 300;
+        color: white;
+    }
+    &.header-2 {
+        font-weight: 700;
+        color: #D8B783;
+    }
+}

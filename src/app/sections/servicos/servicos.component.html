@@ -1,0 +1,10 @@
+<div class="titulo d-flex justify-end" #titulo>
+    <h1>Nossos Serviços</h1>
+</div>
+<div #servicosSection class="servicos">
+    <div class="item d-flex flex-col" *ngFor="let servico of servicos">
+        <img *ngIf="servico.foto" src="../assets/servicos/{{servico.foto}}" class="mb-2">
+        <label>{{servico.title}}</label>
+        <div class="descricao">{{servico.descricao}}</div>
+    </div>
+</div>
