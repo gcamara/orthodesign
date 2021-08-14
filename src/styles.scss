@@ -2,6 +2,7 @@
 @import "~swiper/swiper-bundle";
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;300;700&family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;300;700&family=Montserrat&display=swap");
+@import './assets//css-breakpoints-mixin';
 
 body,
 html {
@@ -14,7 +15,14 @@ html {
     margin: auto;
     margin-top: 120px;
     height: calc(100% - 160px);
-    width: 1440px;
+
+    @include for-tablet-landscape-up {
+        width: 960px;
+    }
+
+    @include for-big-desktop-up {
+        width: 1440px;
+    }
 }
 
 .d-flex {

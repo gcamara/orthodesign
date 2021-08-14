@@ -1,40 +1,91 @@
+@import "../../../assets/css-breakpoints-mixin.scss";
+
 :host {
     display: flex;
-    padding-top: 70px;
+    padding: 70px 30px;
     box-sizing: border-box;
-    padding-bottom: 70px;
+    overflow: hidden;
+
+    @include media(mobile, tablet, desktop-sm) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include media(desktop-up) {
+        flex-direction: row;
+    }
+}
+
+.servicos {
+    @include media(tablet) {
+        flex-direction: column;
+    }
 }
 
 .titulo {
-    width: 20%;
-    div { 
+    @include media(mobile, tablet, desktop) {
         width: 100%;
+        align-self: flex-start;
+    }
+
+    @include media(desktop-up, big-desktop-up) {
+        width: auto;
+    }
+
+    @media screen and (width: 1440px) {
+        width: 30%;
+    }
+
+    div {
         line-height: 35px;
     }
-    h1, h2 {
-        text-align: right;
+    h1,
+    h2 {
         color: #1c1c1c;
         font-size: 50px;
-        word-wrap: break-word;
         margin: 0;
         width: 193px;
         font-weight: 700;
     }
     h2 {
-        text-align: left;
         font-size: 30px;
         font-weight: 100;
     }
 }
 
 .servicos {
-    width: 80%;
-    margin-left: 40px;
-    display: grid;
+    @include media(big-desktop-up) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 30px;
-    column-gap: 30px;
+    @include media(tablet, desktop-up, big-desktop-up) {
+        width: 100%;
+        display: grid;
+        row-gap: 30px;
+        column-gap: 30px;
+    }
+
+    @include media(mobile, tablet) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (orientation: landscape) and (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include media(desktop-sm) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (width: 1440px) {
+        grid-template-columns: 1fr 1fr;
+        width: 160%;
+    }
+
+    @include media(big-desktop-up) {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+    }
 }
 
 .item {
@@ -43,6 +94,7 @@
     box-shadow: 0 10px 30px -27px;
     padding: 20px;
     box-sizing: border-box;
+    height: 100%;
 
     img {
         border-radius: 20px;
@@ -54,21 +106,47 @@
         font-size: 20px;
         color: #1c1c1c;
     }
-    
+
     .descricao {
         color: #999;
         font-weight: 100;
     }
+
+    @include media(mobile) {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    @include media(tablet) {
+        max-width: 100%;
+    }
+
 }
 
 hr.vertical {
-    width: 1px;
-    border: none;
-    border-right: 1px #cecece solid;
+    display: none;
+
+    @include media(desktop-up) {
+        width: 1px;
+        border: none;
+        border-right: 1px #cecece solid;
+        height: 120vh;
+        display: block;
+    }
+
+    @include media(big-desktop-up) {
+        height: 80vh;
+    }
 }
 
 .saiba-mais {
     height: 200px;
+
+    @include media(mobile, tablet, desktop) {
+        width: 50%;
+        margin-top: 30px;
+    }
+
     button {
         max-width: 150px;
         .mat-icon {

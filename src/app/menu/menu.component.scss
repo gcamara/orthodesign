@@ -1,5 +1,6 @@
+@import "../../assets/css-breakpoints-mixin.scss";
+
 :host {
-    max-width: 1440px;
     position: absolute;
     top: 40px;
     left: 0;
@@ -13,14 +14,27 @@
     min-height: 80px;
     z-index: 9;
     background-color: white;
-}
+    display: none;
 
+    @include for-tablet-landscape-up {
+        display: block;
+        width: 90%;
+    }
+
+    @include for-desktop-up {
+        max-width: 960px;
+    }
+
+    @include for-big-desktop-up {
+        max-width: 1440px;
+    }
+}
 
 button {
     padding: 12px;
     box-sizing: border-box;
     border: none;
-    background-color: #447BF5;
+    background-color: #447bf5;
     border-radius: 10px;
     margin-left: 20px;
     color: white;
@@ -32,7 +46,11 @@ button {
 }
 
 .items {
-    width: 35%;
+    width: 50%;
+
+    @include for-big-desktop-up {
+        width: 35%;
+    }
 }
 .menu-item {
     margin: 0 10px;
