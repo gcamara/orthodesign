@@ -1,4 +1,4 @@
-@import '../../../assets/css-breakpoints-mixin.scss';
+@import "../../../assets/css-breakpoints-mixin.scss";
 
 :host {
     display: flex;
@@ -7,6 +7,14 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+
+    @include media(mobile, tablet) {
+        flex-direction: column;
+    }
+
+    @include media(desktop-sm) {
+        flex-direction: row;
+    }
 }
 
 img {
@@ -35,23 +43,32 @@ img {
 
 .foto {
     z-index: 9;
-    margin-right: -40px;
+
+    @include media(tablet, desktop-up) {
+        margin-right: -40px;
+    }
 }
 
 .sobre {
-    height: 600px;
     margin-top: 100px;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 30px;
     box-shadow: 0 10px 30px -27px;
-    width: 50%;
+    width: 90%;
+    
+    @include media(desktop-sm) {
+        min-height: 600px;
+        width: 50%;
+    }
 
     .conteudo {
-        margin-left: 60px;
+        @include media(desktop-sm) {
+            margin-left: 60px;
+        }
     }
-    
+
     .descricao {
-        font-size: 16px;    
+        font-size: 16px;
     }
 }

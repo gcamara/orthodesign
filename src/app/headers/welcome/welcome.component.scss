@@ -1,20 +1,38 @@
+@import '../../../assets/css-breakpoints-mixin.scss';
+
 :host {
     // background-color: #F8F8F8;
     height: 100%;
     background: url('../../../assets/smiling.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-x: center;
     display: flex;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
 .container {
     box-sizing: border-box;
     padding-top: 30px;
+    margin-top: 0;
+
+    @include media(mobile, tablet) {
+        padding-top: 0;
+        margin-top: -20px;
+    }
 }
 
 .autoestima {
-    color: #333;
+    @include media(mobile, tablet) {
+        color: white
+    }
+
+    @include media(desktop-sm) {
+        color: #333;
+    }
 }
+
 .btn-servicos {
     cursor: pointer;
     width: 200px;
@@ -32,6 +50,11 @@ h1 {
     font-size: 80px;
     text-transform: uppercase;
     color: #1c1c1c;
+
+    @include media(mobile, tablet) {
+        font-size: 54px;
+        margin: 10px 0;
+    }
 
     &.header-1 {
         font-weight: 300;

@@ -6,31 +6,119 @@
     left: 0;
     right: 0;
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px -15px;
-    padding: 15px;
     margin: auto;
-    box-sizing: border-box;
-    min-height: 80px;
     z-index: 9;
-    background-color: white;
-    display: none;
+    padding: 20px;
+    box-sizing: border-box;
 
-    @include for-tablet-landscape-up {
-        display: block;
-        width: 90%;
+    .logo {
+        max-width: 180px;
+        align-self: center;
     }
 
-    @include for-desktop-up {
-        max-width: 960px;
+    .menu {
+        border-radius: 10px;
+        box-shadow: 0 0 20px -15px;
+        padding: 15px;
+        box-sizing: border-box;
+        min-height: 80px;
+        z-index: 999;
+        background-color: white;
+        display: flex;
     }
 
-    @include for-big-desktop-up {
-        max-width: 1440px;
+    &.sm {
+        top: 0;
+        z-index: 9999;
+        display: flex;
+
+        .overlay.show {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .text-logo {
+            display: none;
+        }
+
+        .menu {
+            border-radius: 0;
+            width: 50%;
+            position: fixed;
+            left: -200%;
+            top: 0;
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            transition: left 0.5s ease-out;
+
+            .grow-1 {
+                display: none;
+            }
+
+            &.show {
+                left: 0;
+            }
+
+            .items {
+                display: flex;
+                flex-direction: column;
+                font-size: 18px;
+                width: 100%;
+
+                .menu-item {
+                    margin-bottom: 20px;
+
+                    a {
+                        color: #111;
+                    }
+                }
+            }
+
+            .btn-close {
+                min-width: 15px;
+                padding: 0;
+            }
+
+            button.agendar {
+                display: none;
+            }
+        }
+    }
+
+    &.bg {
+        .overlay,
+        .toggle-menu,
+        .btn-close,
+        .logo {
+            display: none;
+        }
+
+        button.agendar {
+            display: none;
+        }
+
+        .menu {
+            margin: auto;
+            align-items: center;
+            max-width: 90%;
+
+            @include media(big-desktop-up) {
+                max-width: 1440px;
+            }
+
+            button.agendar {
+                display: block;
+            }
+        }
     }
 }
 
-button {
+button.agendar {
     padding: 12px;
     box-sizing: border-box;
     border: none;
@@ -42,7 +130,13 @@ button {
 }
 
 .text-logo {
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 180px;
+        height: 40px;
+    }
 }
 
 .items {
