@@ -1,0 +1,61 @@
+@import '../../../../assets/css-breakpoints-mixin.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+
+    @include media(desktop-sm) {
+        flex-direction: row;
+    }
+}
+
+.left-panel {
+    background-color: black;
+    width: 150px;
+    height: 280px;
+    margin-top: 20px;
+    margin-left: 20px;
+
+    @include media(desktop-sm) {
+        width: 250px;
+        height: 450px;
+    }
+}
+
+h1 {
+    margin: 0;
+}
+
+.foto {
+    display: flex;
+
+    img {
+        margin-top: 60px;
+        max-width: 180px;
+        margin-left: -100px;
+        
+        @include media(desktop-sm) {
+            max-width: 300px;
+            margin-left: -200px;
+        }
+
+    }
+}
+
+.conteudo {
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+.cargo {
+    font-size: 18px;
+}
+
+.descricao {
+    width: 80%;
+    max-width: 600px;
+}

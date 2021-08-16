@@ -11,6 +11,8 @@ import { SobreComponent } from './sections/sobre/sobre.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { EquipeComponent } from './sections/equipe/equipe.component';
+import { MembroComponent } from './sections/equipe/membro/membro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
     WelcomeComponent,
     MenuComponent,
     ServicosComponent,
-    SobreComponent
+    SobreComponent,
+    EquipeComponent,
+    MembroComponent
   ],
   imports: [
     BrowserModule,

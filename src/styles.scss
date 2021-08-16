@@ -25,6 +25,23 @@ html {
     }
 }
 
+.titulo {
+    h1,
+    h2 {
+        text-align: right;
+        color: #1c1c1c;
+        font-size: 50px;
+        margin: 5px 0;
+        width: 127px;
+        font-weight: 700;
+    }
+    h2 {
+        text-align: left;
+        font-size: 30px;
+        font-weight: 100;
+    }
+}
+
 .d-flex {
     display: flex;
 }

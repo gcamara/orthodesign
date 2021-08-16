@@ -1,7 +1,7 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, ViewChild } from '@angular/core';
 import { MenuItem } from '../model';
 import { gsap } from 'gsap';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-menu',
@@ -12,6 +12,7 @@ export class MenuComponent implements AfterViewInit {
 
   @HostBinding('class.sm') classesSm = this.breakpointObserver.isMatched('(max-width: 1023px)');
   @HostBinding('class.bg') classesBg = this.breakpointObserver.isMatched('(min-width: 1024px)');
+  @HostBinding('class.scrolled') classesScrolled = false;
 
   showMenu = false;
 
@@ -20,13 +21,13 @@ export class MenuComponent implements AfterViewInit {
   lastNum = -20;
 
   menus: MenuItem[] = [
-    { title: 'Sobre', section: '#sobre' },
-    { title: 'Serviços', section: '#servicos' },
-    { title: 'Nossa Equipe', section: '#equipe' },
-    { title: 'Localização', section: '#localizacao' },
+    { title: 'Sobre', section: 'sobre' },
+    { title: 'Serviços', route: 'servicos' },
+    { title: 'Nossa Equipe', section: 'equipe' },
+    { title: 'Localização', section: 'localizacao' },
   ];
 
-  constructor(private breakpointObserver: BreakpointObserver, private cdr: ChangeDetectorRef) { }
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngAfterViewInit(): void {
     this.breakpointObserver.observe('(min-width: 1024px)')
@@ -54,6 +55,20 @@ export class MenuComponent implements AfterViewInit {
   onResize(): void {
     this.classesSm = this.breakpointObserver.isMatched('(max-width: 1023px)');
     this.classesBg = this.breakpointObserver.isMatched('(min-width: 1024px)');
+  }
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.classesScrolled = window.scrollY > 50;
+  }
+
+  scrollOrNavigate(menu: MenuItem, event: Event): void {
+    event.preventDefault();
+    this.showMenu = false;
+    if (menu.section) {
+      const el = document.getElementById(menu.section);
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
+    }
   }
 
 }

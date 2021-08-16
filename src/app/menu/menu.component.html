@@ -16,7 +16,7 @@
     <div class="grow-1"></div>
     <div class="items d-flex space-between" #items>
         <div class="menu-item" *ngFor="let menu of menus">
-            <a href="#">{{menu.title}}</a>
+            <a href="#" (click)="scrollOrNavigate(menu, $event)">{{menu.title}}</a>
         </div>
     </div>
 </div>

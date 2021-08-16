@@ -31,6 +31,14 @@
         top: 0;
         z-index: 9999;
         display: flex;
+        transition: background-color .3s ease-in-out;
+
+        &.scrolled {
+            background-color: whitesmoke;
+            box-shadow: 0 10px 40px -25px;
+            position: fixed;
+            top: 0;
+        }
 
         .overlay.show {
             width: 100%;

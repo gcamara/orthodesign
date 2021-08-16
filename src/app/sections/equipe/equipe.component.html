@@ -1,0 +1,15 @@
+<div class="titulo mb-4" #titulo>
+    <h2>Nossa</h2>
+    <h1>Equipe</h1>
+</div>
+<swiper #swiper 
+    [slidesPerView]="1"
+    [pagination]="true"
+    [autoplay]="{
+        delay: 8000,
+        disableOnInteraction: false
+    }">
+    <ng-template swiperSlide *ngFor="let membro of membros" let-data>
+        <app-membro [membro]="membro" [active]="data.isActive"></app-membro>
+    </ng-template>
+</swiper>
