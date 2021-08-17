@@ -1,7 +1,8 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostBinding, HostListener, ViewChild } from '@angular/core';
 import { MenuItem } from '../model';
 import { gsap } from 'gsap';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { MenuService } from './menu.service';
 
 @Component({
   selector: 'app-menu',
@@ -20,14 +21,12 @@ export class MenuComponent implements AfterViewInit {
 
   lastNum = -20;
 
-  menus: MenuItem[] = [
-    { title: 'Sobre', section: 'sobre' },
-    { title: 'Serviços', route: 'servicos' },
-    { title: 'Nossa Equipe', section: 'equipe' },
-    { title: 'Localização', section: 'localizacao' },
-  ];
+  urlConsulta = this.menuService.urlConsulta;
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  menus: MenuItem[] = this.menuService.menus;
+
+  constructor(private breakpointObserver: BreakpointObserver,
+    private menuService: MenuService) { }
 
   ngAfterViewInit(): void {
     this.breakpointObserver.observe('(min-width: 1024px)')
@@ -69,6 +68,10 @@ export class MenuComponent implements AfterViewInit {
       const el = document.getElementById(menu.section);
       el?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
     }
+  }
+
+  agendarConsulta(): void {
+    
   }
 
 }

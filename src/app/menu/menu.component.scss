@@ -18,7 +18,7 @@
 
     .menu {
         border-radius: 10px;
-        box-shadow: 0 0 20px -15px;
+        box-shadow: 0 0 20px -7px;
         padding: 15px;
         box-sizing: border-box;
         min-height: 80px;
@@ -92,7 +92,7 @@
                 padding: 0;
             }
 
-            button.agendar {
+            a.agendar {
                 display: none;
             }
         }
@@ -106,7 +106,7 @@
             display: none;
         }
 
-        button.agendar {
+        a.agendar {
             display: none;
         }
 
@@ -119,14 +119,14 @@
                 max-width: 1440px;
             }
 
-            button.agendar {
+            a.agendar {
                 display: block;
             }
         }
     }
 }
 
-button.agendar {
+a.agendar {
     padding: 12px;
     box-sizing: border-box;
     border: none;
@@ -135,6 +135,7 @@ button.agendar {
     margin-left: 20px;
     color: white;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .text-logo {
@@ -159,5 +160,9 @@ button.agendar {
     a {
         text-decoration: none;
         color: #666;
+
+        @include media(desktop-up) {
+            font-size: 16px;
+        }
     }
 }

@@ -1,18 +1,45 @@
 <header>
   <app-menu></app-menu>
-  <swiper [slidesPerView]="1" [pagination]="{ clickable: true }" >
-  <!-- [autoplay]="{
-    delay: 4000,
-    disableOnInteraction: false
-  }"> -->
-    <ng-template swiperSlide>
-      <app-welcome></app-welcome>
+  <swiper [slidesPerView]="1" [pagination]="{ clickable: true }" #swiper
+    [autoplay]="{
+      delay: 8000,
+      disableOnInteraction: false
+  }">
+    <ng-template swiperSlide let-data>
+      <app-welcome class="autoestima" smallText="Recupere sua" 
+                   mainText="AUTOESTIMA" 
+                   [swipez]="swiper"
+                   [active]="data.isActive"
+                   btnLabel="Ir para serviços"
+                   btnRoute="servicos"
+                   description="Veja abaixo como podemos te ajudar a recuperar sua autoestima"
+                   image="../../assets/smiling.jpg">
+      </app-welcome>
     </ng-template>
-    <ng-template swiperSlide>
-      Teste
+    <ng-template swiperSlide let-data>
+      <app-welcome class="sedacao" smallText="Sedação" 
+                   [swipez]="swiper"
+                   [active]="data.isActive"
+                   mainText="Consciente" 
+                   btnLabel="Quero conhecer!"
+                   btnRoute="servicos"
+                   description="Tem medo de dentista? Conheça a sedação consciente!"
+                   image="../../assets/sedacao.jpg"
+                   >
+      </app-welcome>
     </ng-template>
-    <ng-template swiperSlide>
-
+    <ng-template swiperSlide let-data>
+      <app-welcome class="invisalign"
+                  [swipez]="swiper"
+                  [active]="data.isActive"
+                  smallText="Ortodontia com" 
+                  mainText="invisalign" 
+                  btnLabel="Quero conhecer!"
+                  btnRoute="servicos"
+                  description="Invisalign é uma Alternativa aos Tratamentos Ortodônticos Tradicionais!"
+                  image="../../assets/invisalign.jpg"
+                  >
+            </app-welcome>
     </ng-template>
   </swiper>
 </header>
@@ -20,12 +47,13 @@
   <section id="sobre">
     <app-sobre></app-sobre>
   </section>
-  <section class="mt-4">
+  <section id="servicos" class="mt-4 grey">
     <app-servicos></app-servicos>
   </section>
   <section id="equipe">
     <app-equipe></app-equipe>
   </section>
-  <section id="localizacao" class="grey">
+  <section id="localizacao">
+    <app-footer></app-footer>
   </section>
 </main>

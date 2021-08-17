@@ -27,7 +27,7 @@ export class EquipeComponent implements OnInit {
       imagem: 'yasmin.jpg'
     },
     {
-      nome: 'Maria Glayvane Esmeraldo',
+      nome: 'Glayvane Pinho Esmeraldo',
       cargo: 'Gerente Relacionamento & Administrativo',
       descricao: `
         Formada em Enfermagem pela Universidade Federal do Ceará, pós graduada em Nefrologia, Auditoria e Psicanálise. 
@@ -62,6 +62,17 @@ export class EquipeComponent implements OnInit {
         Especialista em Implantodontia pela Academia Cearense de Odontologia, realizou cursos na área de cirurgia oral. 
         Capacitado em atendimentos sob sedação consciente com óxido nitroso, além de residência em HOF e experiência em Bichectomia.`,
         imagem: 'felipe.jpg'
+    },
+    {
+      nome: 'Dra. Karine Tomaz',
+      cargo: 'Cirurgiã Dentista - Ortodontista',
+      descricao: `
+        Formada em Odontologia pela Universidade Federal do Ceará.
+        Especialista em Ortodontia, Ortopedia Funcional dos Maxilares e Invisalign Doctor.
+        Aperfeiçoamento em Periodontia, com foco em cirurgia periodontal estética.
+        Integra o quadro clínico da Orthodesign desde 2016, buscando sempre transformar sorrisos e vidas!
+      `,
+      imagem: 'karine.jpg'
     }
   ]
 

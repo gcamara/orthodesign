@@ -5,11 +5,12 @@
 <swiper #swiper 
     [slidesPerView]="1"
     [pagination]="true"
+    [autoHeight]="true"
     [autoplay]="{
         delay: 8000,
         disableOnInteraction: false
     }">
     <ng-template swiperSlide *ngFor="let membro of membros" let-data>
-        <app-membro [membro]="membro" [active]="data.isActive"></app-membro>
+        <app-membro [membro]="membro" [active]="data.isActive" [swipez]="swiper"></app-membro>
     </ng-template>
 </swiper>

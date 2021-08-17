@@ -3,7 +3,6 @@
 :host {
     // background-color: #F8F8F8;
     height: 100%;
-    background: url('../../../assets/smiling.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -24,6 +23,7 @@
 }
 
 .autoestima {
+    font-size: 20px;
     @include media(mobile, tablet) {
         color: white
     }

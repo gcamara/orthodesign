@@ -13,6 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { EquipeComponent } from './sections/equipe/equipe.component';
 import { MembroComponent } from './sections/equipe/membro/membro.component';
+import { FooterComponent } from './footer/footer.component';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { MembroComponent } from './sections/equipe/membro/membro.component';
     ServicosComponent,
     SobreComponent,
     EquipeComponent,
-    MembroComponent
+    MembroComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { MembroComponent } from './sections/equipe/membro/membro.component';
     SwiperModule,
     NoopAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    NgxGoogleAnalyticsModule.forRoot('UA-144179117-1')
   ],
   providers: [],
   bootstrap: [AppComponent]

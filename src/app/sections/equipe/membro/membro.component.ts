@@ -17,13 +17,21 @@ export class MembroComponent implements OnChanges, OnInit {
   membro!: Membro;
 
   @Input()
-  active = true;
+  active = false;
+
+  @Input()
+  swipez!: any;
 
   num = 20;
   timeline: any;
+  timeout!: any;
 
   constructor() {
-    this.timeline = gsap.timeline();
+    this.timeline = gsap.timeline({ 
+      onReverseComplete: () => {
+        this.swipez.swiperRef.slideNext();
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -55,11 +63,13 @@ export class MembroComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.active.currentValue || changes.active.isFirstChange) {
+    if (changes.active?.currentValue || (changes.active?.isFirstChange() && changes.active?.currentValue)) {
+      window.clearTimeout(this.timeout);
       this.timeline.play();
-      setTimeout(() => this.timeline.reverse(), 6300);
-    } else if (!changes.active.currentValue) {
-      this.timeline.kill(); 
+      this.timeout = setTimeout(() => this.timeline.reverse(), 6300);
+    } else if (!changes.active?.currentValue) {
+      window.clearTimeout(this.timeout);
+      this.timeline.reverse(-1);
     }
   }
 

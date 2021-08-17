@@ -1,0 +1,150 @@
+:host {
+    flex-grow: 1;
+    text-align: center;
+    background-color: #111;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: white;
+    }
+}
+
+.content {
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #181818;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+}
+
+footer {
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: 1024px) {
+        padding-left: 25px;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    @media screen and (max-width: 1023px) {
+        flex-direction: column;
+    }
+}
+
+.logo {
+    $s: 150px;
+    width: $s;
+    height: $s;
+}
+
+.logo-descricao {
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+
+    p {
+        font-size: 13px;
+        width: 200px;
+        margin-top: 20px;
+    }
+}
+
+h1 {
+    color: white;
+    font-weight: 500;
+}
+
+.menus,
+.logo-descricao,
+.redes {
+    padding-right: 50px;
+    &:not(:last-child) {
+        border-right: 0.1px #222 solid;
+    }
+
+    @media screen and (max-width: 1023px) {
+        border: none;
+        padding: 50px 0;
+        border-right: none !important;
+
+        &:not(:last-child) {
+            border-bottom: 0.1px #222 solid;
+        }
+    }
+}
+
+.menus,
+.redes,
+.logo-descricao {
+    @media screen and (max-width: 1023px) {
+        width: calc(100% - 50px);
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
+
+.localizacao {
+    padding: 40px;
+    box-sizing: border-box;
+    @media screen and (min-width: 768px) {
+        iframe {
+            width: 700px;
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        iframe {
+            width: 960px;
+        }
+    }
+}
+
+.menus,
+.redes {
+    a {
+        text-decoration: none;
+        font-size: 16px;
+        margin-bottom: 15px;
+        display: block;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.menus {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 50px;
+
+    @media screen and (min-width: 1024px) {
+        width: 250px;
+    }
+}
+
+.redes,
+.localizacao {
+    text-align: left;
+    padding-left: 50px;
+}
+
+.footer {
+    padding: 15px;
+    box-sizing: border-box;
+}

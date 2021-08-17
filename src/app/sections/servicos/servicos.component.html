@@ -4,18 +4,20 @@
         <h1>Serviços</h1>
     </div>
 </div>
-<hr class="vertical mr-2 ml-2">
-<div #servicosSection class="servicos">
-    <div class="item d-flex flex-col" *ngFor="let servico of servicos">
-        <img *ngIf="servico.foto" src="../assets/servicos/{{servico.foto}}" class="mb-2">
-        <label>{{servico.title}}</label>
-        <div class="descricao">{{servico.descricao}}</div>
-    </div>
-    <div class="d-flex flex-col saiba-mais" #saibaMais>
-        <h1>Quer saber mais?</h1>
-        <p>Clique abaixo e conheça todos os nossos serviços</p>
-        <button mat-stroked-button>
-            Ir para serviços <mat-icon>arrow_forward</mat-icon>
-        </button>
-    </div>
+<div class="c-swipper">
+    <swiper [slidesPerView]="amount" [spaceBetween]="30" [autoHeight]="true" [pagination]="{ clickable: true,
+        dynamicBullets: true }" #swiper
+        [autoplay]="{
+      delay: 5000,
+      disableOnInteraction: false
+  }">
+        <ng-template *ngFor="let servico of servicos" swiperSlide>
+            <div class="item d-flex flex-col">
+                <img *ngIf="servico.foto" src="../assets/servicos/{{servico.foto}}" class="mb-2">
+                <label>{{servico.title}}</label>
+                <div class="descricao">{{servico.descricao}}</div>
+                <a [href]="getUrl(servico)" class="mt-4" target="_blank" mat-stroked-button>Marcar Consulta</a>
+            </div>
+        </ng-template>
+    </swiper>
 </div>

@@ -4,22 +4,10 @@
     display: flex;
     padding: 70px 30px;
     box-sizing: border-box;
-    overflow: hidden;
-
-    @include media(mobile, tablet, desktop-sm) {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    @include media(desktop-up) {
-        flex-direction: row;
-    }
-}
-
-.servicos {
-    @include media(tablet) {
-        flex-direction: column;
-    }
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 960px;
 }
 
 .titulo {
@@ -45,39 +33,53 @@
     }
 }
 
+.c-swipper {
+    width: 100%;
+
+    @include media(desktop-up) {
+        width: 130%;
+    }
+
+    ::ng-deep {
+        .swiper-container-autoheight .swiper-wrapper {
+            min-height: 700px !important;
+        }
+    }
+}
+
 .servicos {
-    @include media(big-desktop-up) {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+    // @include media(big-desktop-up) {
+    // grid-template-columns: 1fr 1fr 1fr;
+    // }
 
-    @include media(tablet, desktop-up, big-desktop-up) {
-        width: 100%;
-        display: grid;
-        row-gap: 30px;
-        column-gap: 30px;
-    }
+    // @include media(tablet, desktop-up, big-desktop-up) {
+    //     width: 100%;
+    //     display: grid;
+    //     row-gap: 30px;
+    //     column-gap: 30px;
+    // }
 
-    @include media(mobile, tablet) {
-        grid-template-columns: 1fr;
-    }
+    // @include media(mobile, tablet) {
+    //     grid-template-columns: 1fr;
+    // }
 
-    @media (orientation: landscape) and (max-width: 1024px) {
-        grid-template-columns: 1fr 1fr;
-    }
+    // @media (orientation: landscape) and (max-width: 1024px) {
+    //     grid-template-columns: 1fr 1fr;
+    // }
 
-    @include media(desktop-sm) {
-        grid-template-columns: 1fr 1fr;
-    }
+    // @include media(desktop-sm) {
+    //     grid-template-columns: 1fr 1fr;
+    // }
 
-    @media screen and (width: 1440px) {
-        grid-template-columns: 1fr 1fr;
-        width: 160%;
-    }
+    // @media screen and (width: 1440px) {
+    //     grid-template-columns: 1fr 1fr;
+    //     width: 160%;
+    // }
 
-    @include media(big-desktop-up) {
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 100%;
-    }
+    // @include media(big-desktop-up) {
+    //     grid-template-columns: 1fr 1fr 1fr;
+    //     width: 100%;
+    // }
 }
 
 .item {
@@ -86,7 +88,7 @@
     box-shadow: 0 10px 30px -27px;
     padding: 20px;
     box-sizing: border-box;
-    height: 100%;
+    height: 610px;
 
     img {
         border-radius: 20px;
@@ -102,6 +104,7 @@
     .descricao {
         color: #999;
         font-weight: 100;
+        flex-grow: 1;
     }
 
     @include media(mobile) {
@@ -112,7 +115,6 @@
     @include media(tablet) {
         max-width: 100%;
     }
-
 }
 
 hr.vertical {
@@ -122,7 +124,7 @@ hr.vertical {
         width: 1px;
         border: none;
         border-right: 1px #cecece solid;
-        height: 120vh;
+        height: 100%;
         display: block;
     }
 

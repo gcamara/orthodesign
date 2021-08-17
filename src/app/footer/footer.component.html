@@ -1,0 +1,29 @@
+<div class="localizacao">
+    <h1>Localização</h1>
+    <h4>Av. Eusébio de Queiroz, 4808, Sala 402 - Centro, Eusébio - CE, 61760-000</h4>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.6229334365257!2d-38.451645984644074!3d-3.8907158971700024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c75b66d34bc373%3A0x2f247f9c6318daf9!2sOrthoDesign%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1629208514701!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen=""></iframe>
+</div>
+<div class="content">
+    <footer>
+        <div class="logo-descricao">
+            <img src="../../assets/logo.svg" alt="Logo OD" class="logo">
+            <p>A Orthodesign Odontologia e sua equipe estão sempre em busca do melhor seja para qualidade de vida, pela felicidade, pela estética ou por quaisquer outros fatores que motivem uma mudança na vida dos pacientes.</p>
+        </div>
+        <div class="menus">
+            <h1>Menu</h1>
+            <div *ngFor="let menu of menus">
+                <nav>
+                    <a href="#" (click)="scrollOrNavigate(menu, $event)">{{menu.title}}</a>
+                </nav>
+            </div>
+        </div>
+        <div class="redes">
+            <h1>Redes sociais</h1>
+            <a href="https://www.instagram.com/orthodesigneusebio/">Instagram</a>
+            <a [href]="urlConsulta" target="_blank">Whatsapp</a>
+        </div>
+    </footer>
+</div>
+<div class="footer">
+    © Copyright 2020. <a href="https://www.instagram.com/gbr.camara">Gabriel Câmara Carvalho</a>
+</div>
